@@ -1,188 +1,61 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>흔적 | Tattoo Franchise</title>
-
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>흔적 | 홈</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" rel="stylesheet">
-
 <style>
-body {
-  margin: 0;
-  font-family: 'Noto Serif KR', serif;
-  background: #0f0f0f;
-  color: #f5f5f5;
-}
-
-header {
-  text-align: center;
-  padding: 140px 20px;
-  background: linear-gradient(135deg, #111, #1a1a1a);
-}
-
-header h1 {
-  font-size: 72px;
-  letter-spacing: 12px;
-  margin: 0;
-}
-
-header p {
-  margin-top: 20px;
-  font-size: 20px;
-  opacity: 0.7;
-}
-
-.section {
-  padding: 100px 20px;
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 34px;
-  margin-bottom: 40px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  background: #1a1a1a;
-  padding: 40px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  background: #222;
-  transform: translateY(-5px);
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input, textarea {
-  padding: 12px;
-  border-radius: 5px;
-  border: none;
-  font-family: inherit;
-}
-
-button {
-  padding: 14px;
-  border: none;
-  background: white;
-  color: black;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #ccc;
-}
-
-footer {
-  text-align: center;
-  padding: 50px;
-  font-size: 14px;
-  opacity: 0.6;
-  background: #111;
-}
+body{margin:0;font-family:'Noto Serif KR',serif;background:#0f0f0f;color:#f5f5f5}
+header{padding:120px 20px;text-align:center;background:linear-gradient(135deg,#111,#1a1a1a)}
+h1{margin:0;font-size:64px;letter-spacing:10px}
+p{opacity:.75;line-height:1.7}
+.nav{display:flex;gap:18px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.nav a{color:#f5f5f5;text-decoration:none;opacity:.85;border-bottom:1px solid transparent;padding:6px 2px}
+.nav a:hover{opacity:1;border-bottom-color:#f5f5f5}
+.section{max-width:1100px;margin:auto;padding:80px 20px;text-align:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:34px}
+.card{background:#1a1a1a;padding:34px;border-radius:12px;transition:.25s}
+.card:hover{background:#222;transform:translateY(-4px)}
+.btn{display:inline-block;margin-top:28px;padding:12px 26px;background:#fff;color:#000;border-radius:999px;text-decoration:none;font-weight:700}
+.btn:hover{background:#d9d9d9}
+footer{padding:40px 20px;text-align:center;background:#111;opacity:.65;font-size:14px}
+.small{font-size:14px;opacity:.7}
 </style>
 </head>
-
 <body>
-
 <header>
   <h1>흔 적</h1>
   <p>Leave Your Mark.</p>
+  <div class="nav">
+    <a href="index.html">HOME</a>
+    <a href="brand.html">BRAND</a>
+    <a href="franchise.html">FRANCHISE</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
 </header>
 
 <section class="section">
-  <h2>Brand Story</h2>
-  <p>
-    흔적은 몸 위에 남기는 단순한 그림이 아닙니다.  
-    기억과 감정, 그리고 다짐을 형태로 남기는 브랜드입니다.  
-    우리는 안전과 의미를 동시에 설계합니다.
-  </p>
-</section>
+  <h2>한 줄로 말하면</h2>
+  <p>흔적은 “의미 + 안전 + 표준화”로 완성하는 타투 프랜차이즈 브랜드입니다.</p>
 
-<section class="section">
-  <h2>Signature Programs</h2>
   <div class="cards">
     <div class="card">
       <h3>Minimal Line</h3>
-      <p>첫 타투를 위한 미니멀 디자인 전문</p>
+      <p class="small">첫 타투 시장을 위한 미니멀 시그니처.</p>
     </div>
     <div class="card">
       <h3>Memory Edition</h3>
-      <p>개인의 이야기를 상징으로 번역</p>
+      <p class="small">사연을 상징으로 번역하는 스토리 디자인.</p>
     </div>
     <div class="card">
       <h3>Cover & Rework</h3>
-      <p>기존 타투 커버업 및 리워크</p>
+      <p class="small">후회를 정리하는 커버업/리워크 프로그램.</p>
     </div>
   </div>
+
+  <a class="btn" href="franchise.html">가맹 안내 보기</a>
 </section>
 
-<section class="section">
-  <h2>Our Work</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136">
-    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee">
-    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
-  </div>
-</section>
-
-<section class="section">
-  <h2>Leadership</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>나순영</h3>
-      <p>Co-Founder & Creative Director</p>
-    </div>
-    <div class="card">
-      <h3>이현찬</h3>
-      <p>Co-Founder & Operations Director</p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Franchise Inquiry</h2>
-  <form>
-    <input type="text" placeholder="이름">
-    <input type="email" placeholder="이메일">
-    <textarea rows="4" placeholder="문의 내용"></textarea>
-    <button type="submit">문의 보내기</button>
-  </form>
-</section>
-
-<footer>
-  © 2026 흔적 Tattoo Franchise. All Rights Reserved.
-</footer>
-
+<footer>© 2026 흔적 Tattoo Franchise. All Rights Reserved.</footer>
 </body>
 </html>
