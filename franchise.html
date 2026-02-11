@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>흔적 | 가맹</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Noto Serif KR',serif;background:#0f0f0f;color:#f5f5f5}
+.top{padding:70px 20px;text-align:center;background:#111}
+h1{margin:0;font-size:44px;letter-spacing:8px}
+.nav{display:flex;gap:18px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.nav a{color:#f5f5f5;text-decoration:none;opacity:.85;border-bottom:1px solid transparent;padding:6px 2px}
+.nav a:hover{opacity:1;border-bottom-color:#f5f5f5}
+.section{max-width:980px;margin:auto;padding:70px 20px}
+.box{background:#1a1a1a;border-radius:12px;padding:32px;margin-top:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+.small{opacity:.75;line-height:1.8}
+form{display:flex;flex-direction:column;gap:12px;margin-top:10px}
+input,textarea{padding:12px;border-radius:8px;border:none;font-family:inherit}
+button{padding:13px;border:none;border-radius:999px;background:#fff;color:#000;font-weight:800;cursor:pointer}
+button:hover{background:#d9d9d9}
+.note{font-size:13px;opacity:.65}
+footer{padding:40px 20px;text-align:center;background:#111;opacity:.65;font-size:14px}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>FRANCHISE</h1>
+  <div class="nav">
+    <a href="index.html">HOME</a>
+    <a href="brand.html">BRAND</a>
+    <a href="franchise.html">FRANCHISE</a>
+    <a href="contact.html">CONTACT</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="box">
+    <h2>가맹점에 제공되는 것</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>운영 매뉴얼</h3>
+        <p class="small">상담 스크립트·위생 SOP·클레임 대응 기준.</p>
+      </div>
+      <div class="box">
+        <h3>시그니처 메뉴</h3>
+        <p class="small">미니멀/스토리/커버업 프로그램 패키지.</p>
+      </div>
+      <div class="box">
+        <h3>브랜딩</h3>
+        <p class="small">간판/톤앤매너/촬영 가이드/콘텐츠 템플릿.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>가맹 문의 (임시 폼)</h2>
+    <p class="note">※ 지금 폼은 “전송 기능”이 없어서 버튼을 눌러도 이메일로 안 갑니다. (원하면 실제 전송되게 바꿔줄 수 있음)</p>
+    <form>
+      <input type="text" placeholder="이름">
+      <input type="text" placeholder="연락처">
+      <input type="email" placeholder="이메일">
+      <textarea rows="5" placeholder="희망 지역/예산/문의 내용을 적어주세요"></textarea>
+      <button type="button">문의 내용 저장(임시)</button>
+    </form>
+  </div>
+</div>
+
+<footer>© 2026 흔적 Tattoo Franchise. All Rights Reserved.</footer>
+</body>
+</html>
