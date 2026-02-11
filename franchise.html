@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>흔적 | 가맹</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
 body{margin:0;font-family:'Noto Serif KR',serif;background:#0f0f0f;color:#f5f5f5}
 .top{padding:70px 20px;text-align:center;background:#111}
@@ -16,17 +19,26 @@ h1{margin:0;font-size:44px;letter-spacing:8px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
 .small{opacity:.75;line-height:1.8}
 .note{font-size:13px;opacity:.65;margin-top:10px}
-.mailbtn{
-  display:inline-block;
-  margin-top:30px;
-  padding:14px 30px;
+
+form{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+input,textarea{
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  font-family:inherit;
+}
+
+button{
+  padding:14px;
+  border:none;
+  border-radius:999px;
   background:#fff;
   color:#000;
-  text-decoration:none;
-  border-radius:999px;
   font-weight:800;
+  cursor:pointer;
 }
-.mailbtn:hover{background:#d9d9d9}
+button:hover{background:#d9d9d9}
+
 footer{padding:40px 20px;text-align:center;background:#111;opacity:.65;font-size:14px}
 </style>
 </head>
@@ -64,19 +76,56 @@ footer{padding:40px 20px;text-align:center;background:#111;opacity:.65;font-size
 
   <div class="box">
     <h2>가맹 문의</h2>
-    <p class="note">
-      아래 버튼을 누르면 가맹 문의 메일이 자동 작성됩니다.<br>
-      작성 후 보내기만 누르시면 됩니다.
-    </p>
+    <p class="note">작성 후 제출하면 문의 내용이 구글 시트에 자동 저장됩니다.</p>
 
-<a class="mailbtn" href="여기에_구글폼_링크" target="_blank" rel="noopener">
-  가맹 문의 작성하기 (Google Form)
-</a>
+    <form id="frForm">
+      <input name="name" type="text" placeholder="이름" required>
+      <input name="phone" type="text" placeholder="연락처" required>
+      <input name="email" type="email" placeholder="이메일" required>
+      <input name="region" type="text" placeholder="희망 지역 (선택)">
+      <input name="budget" type="text" placeholder="예산 (선택)">
+      <textarea name="message" rows="5" placeholder="문의 내용" required></textarea>
 
+      <button type="submit">문의 제출</button>
+      <p class="note" id="status"></p>
+    </form>
   </div>
 </div>
 
 <footer>© 2026 흔적 Tattoo Franchise. All Rights Reserved.</footer>
+
+<script>
+const WEB_APP_URL = "YOUR_WEB_APP_URL"; // 여기만 너 URL로 교체
+
+document.getElementById("frForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const payload = Object.fromEntries(new FormData(form).entries());
+
+  payload.page = location.href;
+  payload.userAgent = navigator.userAgent;
+
+  const status = document.getElementById("status");
+  status.textContent = "전송 중...";
+
+  try {
+    const res = await fetch(WEB_APP_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) throw new Error("Network error");
+
+    status.textContent = "제출 완료! 빠르게 연락드릴게요.";
+    form.reset();
+  } catch (err) {
+    status.textContent = "전송 실패. 잠시 후 다시 시도해 주세요.";
+    console.error(err);
+  }
+});
+</script>
 
 </body>
 </html>
