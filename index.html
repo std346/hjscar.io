@@ -17,37 +17,37 @@ body {
 
 header {
   text-align: center;
-  padding: 120px 20px;
+  padding: 140px 20px;
   background: linear-gradient(135deg, #111, #1a1a1a);
 }
 
 header h1 {
-  font-size: 64px;
-  letter-spacing: 10px;
+  font-size: 72px;
+  letter-spacing: 12px;
   margin: 0;
 }
 
 header p {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 20px;
   opacity: 0.7;
 }
 
 .section {
   padding: 100px 20px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
   text-align: center;
 }
 
 .section h2 {
-  font-size: 32px;
+  font-size: 34px;
   margin-bottom: 40px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
 }
 
@@ -63,19 +63,43 @@ header p {
   transform: translateY(-5px);
 }
 
-.button {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 14px 30px;
-  background: white;
-  color: black;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: 0.3s;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.button:hover {
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  font-family: inherit;
+}
+
+button {
+  padding: 14px;
+  border: none;
+  background: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+button:hover {
   background: #ccc;
 }
 
@@ -97,10 +121,11 @@ footer {
 </header>
 
 <section class="section">
-  <h2>Brand Philosophy</h2>
+  <h2>Brand Story</h2>
   <p>
-    흔적은 단순한 타투가 아닙니다.  
-    기억, 감정, 다짐을 몸 위에 남기는 브랜드입니다.
+    흔적은 몸 위에 남기는 단순한 그림이 아닙니다.  
+    기억과 감정, 그리고 다짐을 형태로 남기는 브랜드입니다.  
+    우리는 안전과 의미를 동시에 설계합니다.
   </p>
 </section>
 
@@ -109,16 +134,25 @@ footer {
   <div class="cards">
     <div class="card">
       <h3>Minimal Line</h3>
-      <p>첫 타투를 위한 미니멀 시그니처 디자인</p>
+      <p>첫 타투를 위한 미니멀 디자인 전문</p>
     </div>
     <div class="card">
       <h3>Memory Edition</h3>
-      <p>사연을 디자인으로 번역하는 커스텀 작업</p>
+      <p>개인의 이야기를 상징으로 번역</p>
     </div>
     <div class="card">
       <h3>Cover & Rework</h3>
-      <p>후회를 정리하는 정교한 리워크 프로그램</p>
+      <p>기존 타투 커버업 및 리워크</p>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Our Work</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136">
+    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee">
+    <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb">
   </div>
 </section>
 
@@ -137,12 +171,13 @@ footer {
 </section>
 
 <section class="section">
-  <h2>Franchise</h2>
-  <p>
-    표준화된 위생 시스템과 디자인 가이드라인으로  
-    안정적인 운영 모델을 제공합니다.
-  </p>
-  <a href="#" class="button">가맹 문의</a>
+  <h2>Franchise Inquiry</h2>
+  <form>
+    <input type="text" placeholder="이름">
+    <input type="email" placeholder="이메일">
+    <textarea rows="4" placeholder="문의 내용"></textarea>
+    <button type="submit">문의 보내기</button>
+  </form>
 </section>
 
 <footer>
